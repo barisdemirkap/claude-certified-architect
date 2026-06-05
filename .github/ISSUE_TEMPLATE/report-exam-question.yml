@@ -1,0 +1,40 @@
+name: "Report Exam Question Pattern"
+description: "Report a concept or question pattern from the exam to improve curriculum coverage (NO verbatim question text)"
+labels: ["exam-coverage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **IMPORTANT:** Do NOT reproduce verbatim exam questions or answers. This violates the exam NDA and will be closed immediately.
+        Report the CONCEPT TYPE and what made it tricky — not the actual question text.
+  - type: dropdown
+    id: domain
+    attributes:
+      label: "Exam Domain"
+      options: ["D1 — Agent Architecture", "D2 — Tool Design & MCP", "D3 — Claude Code Config", "D4 — Prompt Engineering", "D5 — Context & Reliability"]
+    validations:
+      required: true
+  - type: input
+    id: scenario
+    attributes:
+      label: "Related Scenario (if applicable)"
+      placeholder: "e.g., Scenario 3: Multi-Agent Research"
+  - type: textarea
+    id: concept
+    attributes:
+      label: "What concept type was tested?"
+      description: "Describe the CONCEPT (not the question). e.g., 'tested whether you know when to use PostToolUse vs PreToolUse hook'"
+    validations:
+      required: true
+  - type: textarea
+    id: tricky_part
+    attributes:
+      label: "What made it tricky?"
+      description: "What was the subtle distinction or common misconception?"
+    validations:
+      required: true
+  - type: textarea
+    id: curriculum_gap
+    attributes:
+      label: "Which curriculum file should cover this?"
+      description: "e.g., 'course/01-agent-architecture/tricky-details.md could add an entry about X'"

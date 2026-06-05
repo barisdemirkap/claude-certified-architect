@@ -1,0 +1,42 @@
+name: "Content Fix"
+description: "Report an error or improvement in a module or lab"
+labels: ["content"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: "File Path"
+      description: "Path to the file that needs fixing"
+      placeholder: "e.g., course/01-agent-architecture/README.md"
+    validations:
+      required: true
+  - type: dropdown
+    id: error_type
+    attributes:
+      label: "Error Type"
+      options:
+        - "factual error"
+        - "unclear explanation"
+        - "broken link"
+        - "missing content"
+        - "wrong answer key"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Describe the error or improvement needed"
+    validations:
+      required: true
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: "Suggested Fix"
+      description: "What should the content say instead?"
+  - type: input
+    id: guide_ref
+    attributes:
+      label: "guide_en.MD Line Reference"
+      description: "If applicable, the line number in guide_en.MD that supports the correct content"
+      placeholder: "e.g., line 842"

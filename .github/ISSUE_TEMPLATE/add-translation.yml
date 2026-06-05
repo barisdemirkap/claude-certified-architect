@@ -1,0 +1,42 @@
+name: "Add Translation"
+description: "Contribute a new language translation"
+labels: ["translation"]
+body:
+  - type: input
+    id: language_name
+    attributes:
+      label: "Language Name"
+      placeholder: "e.g., French"
+    validations:
+      required: true
+  - type: input
+    id: language_code
+    attributes:
+      label: "Language Code"
+      placeholder: "e.g., fr"
+    validations:
+      required: true
+  - type: checkboxes
+    id: files_planned
+    attributes:
+      label: "Files Planned"
+      description: "Which files are you planning to translate?"
+      options:
+        - label: "guide_XX.MD"
+        - label: "course modules"
+        - label: "labs"
+  - type: dropdown
+    id: current_status
+    attributes:
+      label: "Current Status"
+      options:
+        - "starting fresh"
+        - "in progress"
+        - "ready for review"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes"
+      description: "Any additional context about the translation effort (optional)"
